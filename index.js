@@ -58,6 +58,7 @@ app.get("/payment/:phone", (req, res) => {
 app.post("/payment", (req, res) => {
   // this happens when the user clicks on the link in SMS
   //const sFrom = req.params.phone;
+  //res.end("Thanks for your order!")
   const sFrom = req.body.telephone;
   oOrders[sFrom] = new ShwarmaOrder(sFrom);
   res.end(oOrders[sFrom].renderForm(req.body.title, req.body.price));
